@@ -9,7 +9,7 @@ __  _  _______    /  _  \_______   ____ |  |__ |    |   \______
 *** DESCRIPTION ***
 *******************
 
-wmarchup is a very simple program used to monitor for package updates in Arch
+wmArchUp is a very simple program used to monitor for package updates in Arch
 Linux. It uses the checkupdates script that come with pacman for safe checking
 if there is any package updates. It is a dockapp that is supported by X window
 managers such as Window Maker, AfterStep, BlackBox, Fluxbox and Enlightenment.
@@ -55,5 +55,5 @@ base to develop this little application.
 *** AUTHOR ***
 **************
 
-wmarchup has been written by Panagiotis A. Dimopoulos <panosdim@gmail.com>
+wmArchUp has been written by Panagiotis A. Dimopoulos <panosdim@gmail.com>
 All comments are welcome.
