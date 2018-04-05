@@ -153,7 +153,6 @@ void
 check_for_updates()
 {
     XSelectInput(DAGetDisplay(NULL), DAGetWindow(), NoEventMask);
-    FILE *fp;
     char res[MAX];
 
 
@@ -161,9 +160,8 @@ check_for_updates()
     DASetPixmap(checking);
 
     /* Read output from command */
-    fp = popen("checkupdates", "r");
+    FILE *fp = popen("checkupdates", "r");
     if (fgets(res, MAX, fp) != NULL) {
-        fclose(fp);
         updates_available = TRUE;
         DASetShape(arch_mask);
         DASetPixmap(arch);
@@ -171,6 +169,10 @@ check_for_updates()
         updates_available = FALSE;
         DASetShape(arch_bw_mask);
         DASetPixmap(arch_bw);
+    }
+
+    if (pclose(fp) != 0) {
+        fprintf(stderr, " Error: Failed to close command stream \n");
     }
 
     XSelectInput(DAGetDisplay(NULL), DAGetWindow(),
